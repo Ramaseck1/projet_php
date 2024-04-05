@@ -1,0 +1,688 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+background-color: rgb(243, 237, 237);
+overflow-x: hidden;
+overflow-y: hidden;
+
+
+
+
+
+
+}
+html, body {
+    margin: 0;
+    padding: 0;
+  
+    
+   
+}
+ol li{
+    list-style: none;
+}
+ol li a{
+
+}
+
+
+/*burger*/
+.container{
+    background-color: white;
+    width: 20em;
+    position: relative;
+    height: 61em;
+    position: absolute;
+    z-index: 1;
+    transition: 0.5s ease;
+   transform: translate(0);
+    box-shadow: 0 0 1em 0.8em rgb(228, 224, 224);
+   
+}
+input{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+.fas{
+ 
+    position: absolute;
+    top: 1em;
+    right: -4em;
+    font-size: 25px;
+    border-radius: 3px;
+    color: rgb(24, 22, 22);
+    padding: 0.3em 1em;
+    cursor: pointer;
+   
+
+}
+
+
+#check:checked ~ .container{
+    transform: translate(-20em);
+    
+    .label{
+        width: 112em;
+        position: relative;
+        left: -4em;
+    }
+    .fas{
+        position: relative;
+        right: inherit;
+    }
+     .contenu{
+        width: 108em;
+        position: relative;
+      
+        
+       
+
+
+    }
+    .contenu .inp input{
+
+        width: 48em;
+    }
+    .title .promos{
+        position: relative;
+        left: 75em;
+        font-size: 0.8em;
+    
+    }
+    .title{
+        margin-left: 4em;
+    }
+    .para{
+        position: relative;
+        top: 3.4em;
+    }
+    /* referentiel.html */
+    .contenu1 .card{
+        width: 16.4em;
+        background-color: white;
+        display: inline;
+       
+        align-items: center;
+    }
+    .contenu1  .card5{
+        width: 1em;
+    }    
+      
+    .p{
+        position: relative;
+        left: 5em;
+        top: 4em;
+        line-height: 52px;
+      
+       
+    }
+    .img{
+        position: relative;
+        top: 1em;
+        left: 3em;
+
+    }
+    .p1{
+        position: relative;
+        left:7em;
+    }
+    .card .fa{
+        position: relative;
+        left: 6px;
+        top: -2em;
+
+    }
+    
+    /* apprennnant */
+    .click-me{
+        position: relative;
+        left: -3em;
+        width: 7em;
+        top: 1em;
+       
+    }
+    .titleapp .promos{
+        position: relative;
+        left: 55em;
+    }
+    .promo2 .pro{
+        position: relative;
+        left: -14em;
+
+    }
+
+    .foot {
+        position: relative;
+        left: -8.3em;
+    }
+    .trai{
+        position: relative;
+        top: -12em;
+    }
+   
+   
+
+
+.footer{
+    background-color: white;
+    position: absolute;
+    left: 20em;
+    top: 54em;
+    height: 20em;
+    width: 120em;
+    display: flex;
+    justify-content: center;
+   
+   
+   
+    }
+        .footer p{
+        text-align: center;
+        margin-top: 2em;
+  
+    }
+    
+
+          
+}
+
+
+
+
+
+
+
+
+
+
+
+.label{
+    background-color: white;
+    width: 90em;
+    height: 6em;
+   margin-left: 22em;
+}
+
+
+
+.content{
+    position: relative;
+   
+    top: 2em;
+    
+  
+}
+
+
+.head{
+    position: relative;
+    top: -5em;
+}
+.container h1{
+    position: relative;
+    left: 1em;
+}
+.container li a{
+    position: relative;
+    left: 2em;
+    line-height: 2em;
+    text-decoration: none;
+    color: rgb(109, 108, 108);
+    font-size: 1.2em;
+
+}
+.container .material-icons{
+    font-size: 0.9em;
+    position: relative;
+    left: -1em;
+}
+
+.container li a:hover{
+    background-color: #16A085;
+    color: white;
+   padding: 10px;
+   border-radius: 12px;
+   width: 1em;
+   padding-right: 60px;
+  
+
+}
+.para{
+    display: flex;
+    position: relative;
+    left: -23em;
+    top: 2em;
+   gap: 3em;
+    
+}
+.para .icon{
+    display: block;
+    visibility: visible;
+    height: 1.4em;
+    border: 1px solid grey;
+}
+.icon {
+    padding-left: 25px;
+    background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right;
+    background-size: 20px;
+    padding: 1.4em;
+    position: relative;
+    top: -0.6em;
+    border-radius: 5px;
+    left: -1em;
+ 
+  }
+.content .date{
+   border: 0.1px solid rgb(209, 208, 208);
+    height: 2em;
+    position: relative;
+    left: -5em;
+    box-shadow: 1em 1em 1em  rgb(245, 245, 245);
+    color: #16A085;
+    padding-right: 2em;
+    
+
+}
+.date .fa{
+    position: relative;
+    top: 0.3em;
+    left: 1em;
+}
+.user{
+    background-color: rgb(211, 209, 209);
+    height: 3em;
+    width: 3em;
+    border-radius: 100%;
+    position: relative;
+    left: -4em;
+    top: -0.6em;   
+
+}
+.users{
+    position: relative;
+    left: -3em;
+
+}
+.users select{
+    border: none;
+    font-size: 1em;
+    background-color: white;
+}
+.users span{
+    color: #16A085;
+}
+
+
+/* CONTENU */
+
+main{
+    position: relative;
+  
+    left: 16em;
+    position:relative;
+    top:-20em;
+
+   
+   
+}
+.title{
+    margin-left: 4em;
+}
+.title .promos{
+    position: relative;
+    left: 60em;
+    font-size: 0.8em;
+
+}
+.promos span{
+    margin-left: 0.6em;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.contenu{
+    background-color: white;
+    height: 39em;
+    line-height: 5em;
+    position: relative;
+    width: 90em;
+    left: 6em;
+    
+   
+}
+.contenu h3{
+    position: relative;
+    top: 1em;
+}
+.contenu input{
+    display: block;
+    visibility: visible;
+    
+    height: 4em;
+    width: 90%;
+    border-radius: 1em;
+    border: 1px solid rgb(189, 187, 187);
+    position: relative;
+    left: 10em;
+
+}
+
+
+.btn{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: 8em;
+    top: 1em;
+   
+
+}
+.btn a{
+    background-color: blue;
+    width: 13em;
+    height: 3em;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+   
+
+}
+.btn span{
+    position: relative;
+    top: -1em;
+    left: 1em;
+    
+}
+.btn .btn{
+    position: relative;
+    left: -10.9em;
+}
+.btn .btn span{
+    position: relative;
+    left: 1.2em;
+}
+
+.inp input{
+    width: 48.3em;
+    display: inline;
+}
+.contenu label{
+    position: relative;
+    left: 8.4em;
+}
+.contenu h3{
+    position: relative;
+    left: 5em;
+}
+.trait{
+    border-left: 1px solid ;
+    position: relative;
+    left: 4em;
+   height:26em;
+   top: -31em;
+
+}
+.traitapp{
+    border-left: 1px solid rgb(193, 238, 193) ;
+    position: relative;
+    width: 14em;
+    height: 58em;
+    top:-65em;
+    left: 4em;
+
+
+
+}
+.rond{
+    background-color: rgb(226, 223, 223);
+    position: relative;
+    left: 2.5em;
+    width: 3em;
+    height:3em;
+    top: -59em;
+    border-radius: 100%;
+    text-decoration: none;
+}
+.rond1{
+    background-color: rgb(226, 223, 223);
+    position: relative;
+    left: 2.5em;
+    width: 3em;
+    height:3em;
+    top: -35.5em;
+    border-radius: 100%;
+    text-decoration: none;
+
+
+}
+.rond1app{
+    position: relative;
+    top: -3em;
+}
+.rond:hover ,.rond1:hover{
+    background-color: #16A085;
+    color: white;
+   
+}
+
+  
+.rond span{
+    position: relative;
+    left: 0.6em;
+    font-size: 1.6em;
+    font-weight: bold;
+    top: 0.3em;
+    
+    
+}
+.rond1 span{
+    position: relative;
+    left: 0.6em;
+    top: 0.3em;
+    font-size: 1.6em;
+    font-weight: bold;
+    
+
+
+}
+
+
+/*  Style referentiel */
+
+.contenu1{
+   
+    height: 35em;
+    line-height: 5em;
+    position: relative;
+    width: 112em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.contenu1 .card{
+    width: 20em;
+    height: 22em;
+    background-color: white;
+  
+    align-items: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 3em;
+
+}
+.card .fa{
+    position: relative;
+    left: -8em;
+    top: -3em;
+}
+.card .p span{
+    color: #16A085;
+    font-weight: bold;
+}
+.cards{
+    line-height: 2.5em;
+  
+}
+.cards input ,label, h3{
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.cards button{
+    background-color: #16A085;
+    color: white;
+    padding: 10px;
+    position: relative;
+    left: 8em;
+    top: 2em;
+    width: 12em;
+    
+}
+.card input{
+    visibility: visible;
+    display: block;
+    padding: 1em;
+    border: 2px solid grey;
+    border-radius: 6px ;
+    width: 25em;
+}
+
+
+/* STYLE PROMOTION.html */
+
+.contenu2{
+    background-color: white;
+    height: 35em;
+    line-height: 5em;
+    position: relative;
+    width: 112em;
+   
+}
+.contenu2 h3{
+    position: relative;
+    top: 1em;
+    left: 5em;
+}
+.contenu2 .chek{
+    visibility: visible;
+    display: block;
+    -webkit-appearance:button;
+
+}
+.contenu2 .chek input{  
+    color: #16A085;
+}
+.btnn a{
+    border: none;
+    padding: 1em 4em 2em 2em;
+    position: relative;
+    top:1em;
+    color: black;
+    background-color: rgb(177, 195, 202) ;
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 0.7em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5px;
+    width: 100px;
+    text-decoration: none;
+
+}
+.btnn a:nth-child(2){
+    background-color: #16A085;
+    color: white;
+}
+
+/* style  apprennant */
+.titleapp .promos{
+   position: relative;
+   left: 70em;
+}
+.promo2{
+    background-color: white;
+    width: 90em;
+    height: 5em;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 6em;
+}
+.promo2 p{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.promo2 span{
+color: #16A085;
+}
+.search .prom {
+    position: relative;
+    top:5em;
+}
+.search button{
+    height: 3em;
+    position: relative;
+    top: 4.3em;
+    width: 8em;
+    background-color: #16A085;
+    color: white;
+    font-size: 1em;
+
+}
+.search button span{
+    font-size: 1.2em;
+}
+
+table{
+    width: 100%;
+
+    border-collapse: collapse;
+
+
+
+}
+ table th {
+    background-color: rgb(243, 209, 243);
+    height: 1px;
+    opacity: 0.7;
+    
+    
+}
+td,th{
+    text-align: left;
+    padding: 8px;
+    height: 2em;
+    width: 12em;
+}
+
+.footer{
+    background-color: white;
+    position: absolute;
+    left: 22em;
+    top: 54em;
+    height: 20em;
+    width: 92em;
+    display: flex;
+    justify-content: center;
+   
+   
+   
+}
+.footer p{
+  text-align: center;
+  margin-top: 2em;
+  
+}
+

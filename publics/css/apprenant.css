@@ -1,0 +1,335 @@
+³{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body{
+    background-color: rgb(224, 225, 226);
+}
+.label1{
+    background-color: white;
+
+}
+.promotion{
+    position: relative;
+    top: 12em;
+}
+
+/* Style apprenant */
+.promotion{
+    position: absolute;
+    left: 14em;
+    display: flex;
+    top: 1.5em;
+    font-weight: bold;
+    font-size: 1.3em;
+    
+}
+.promotion span{
+    color: #16A085;
+    position: relative;
+    left: 0.2em;
+}
+.label1 .content{
+    position: relative;
+    left: 50em;
+
+}
+ .contentapp span{
+    color: #16A085;
+
+}
+.champ{
+    display: flex; 
+    gap: 30em;
+}
+
+
+    
+   
+
+.contenuapp{
+    height: 70em;
+    background-color: white;
+}
+/* .traits{
+    position: relative;
+    top: -25em;
+    left: 23em;
+}
+.trait{
+    border-left: 2px solid black;
+    position: relative;
+    top: -25em;
+    left: -18em;
+    height: 20em;
+    width: 4em;
+
+} */
+table{
+    width: 100%;
+
+    border-collapse: collapse;
+
+
+
+}
+ table th {
+    background-color: rgb(243, 209, 243);
+    height: 3em;
+    opacity: 0.7;
+    
+    
+}
+td,th{
+    text-align: left;
+    padding: 8px;
+    height: 3em;
+}
+
+
+.promotapp{
+    margin-left: -100%;
+}
+.titleapp {
+    margin-top: -2em;
+
+   
+}
+.center{
+       background-color: white;
+       width: 80em;
+       position: absolute;
+      
+       visibility: hidden;
+     
+       display: none;
+       height: 50em;
+      
+      z-index: 1;
+     box-shadow: 6px 10px 15px 15px rgb(231, 228, 228);
+  
+    
+     
+     
+    
+}
+.click-me{
+    display: block;
+   
+   
+    background-color: rgb(92, 23, 133);
+    cursor:pointer;
+    color: white;
+    font-weight: bold;
+    width: 9em;
+    height: 2.4em;
+    border-radius: 5px;
+   
+   
+    
+}
+.click-me p{
+    position: absolute;
+    left: 1em;
+    top: -1em;
+}
+#click{
+    display: none;
+}
+
+#click:checked~ .center{
+    visibility: visible;
+    
+    display: block;
+    position: absolute;
+    left: 0.1em;
+    top: -6em;
+    background-color: white;
+    opacity: 1;
+  
+    .fond{
+        background-color: rgb(148, 147, 147);
+        width: 100em;
+        height: 100em;
+        position: absolute;
+        z-index:-1 ;
+        opacity: 0.3;
+        left: 80em;
+        padding-top: 20em;
+        
+       
+       
+    }
+
+
+   
+   
+
+}
+.containerr input{
+    visibility: visible;
+  
+}
+.form input{
+    width:45em;
+    height: 4em;
+    border-radius: 1px;
+}
+.form label{
+    position: relative;
+    left: 7.2em;
+}
+.form{
+    position: relative;
+    left: -7em;
+}
+.bts{
+    margin-left: 50em;
+}
+.a{
+    background-color: #16A085;
+    position: relative;
+    left: 4em;
+    height: 3em;
+    font-size: 1.2em;
+    top: 1.6em;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.bts .fas{
+    position: relative;
+    top: 10px;
+    left: 2em;
+    background-color: rgb(241, 240, 240);
+    height: 2em;
+
+    
+}
+.a p{
+    position: relative;
+    top: -1em;
+}
+
+.center1{
+    background-color: white;
+    width: 60em;
+    position: absolute;
+   
+    visibility: hidden;
+  
+    display: none;
+    height: 21em;
+    top: -6em;
+    left: 1em;
+   z-index: 1;
+  box-shadow: 5px 5px 5px 5px rgb(179, 178, 178);
+  
+  
+ 
+}
+.click-mee{
+ display: block;
+
+
+ background-color: rgb(92, 23, 133);
+ cursor:pointer;
+ color: white;
+ font-weight: bold;
+ width: 9em;
+ height: 2.4em;
+ border-radius: 5px;
+
+
+
+
+ 
+}
+.click-mee p{
+ position: absolute;
+ left: 1em;
+ top: -1em;
+}
+#clicks{
+ display: none;
+}
+.border{
+    border: 2px dotted black;
+    height: 10em;
+}
+.border input{
+    position: relative;
+    top: 5em;
+    left: 20em;
+}
+#clicks:checked~ .center1{
+ visibility: visible;
+ 
+ display: block;
+
+ 
+}
+ .close-btn{
+    background-color: #16A085;
+    padding: 1em;
+    
+   
+
+}
+.fermer{
+    background-color: red;
+    padding: 1em;
+    margin-left: 35em;
+    
+
+}
+ /* style presence */
+ .entete{
+    margin-left: 8em;
+    gap: 15px;
+ }
+ .select1 select{
+
+    height: 3.5em;
+    border-radius: 10px;
+    width: 8em;
+    background-color: white;
+ }
+ .select2 select{
+
+    height: 3.5em;
+    width: 12em;
+    border-radius: 10px;
+    background-color: white;
+ }
+ 
+
+ .datecl{
+    position: relative;
+    left: -8em;
+    top: 0.9em;
+
+ }
+
+ .datecl input{
+    width: 15em;
+ }
+ .boutons{
+    background-color: #16A085;
+    height: 3em;
+    position: relative;
+    top: 1em;
+    width: 7em;
+    border-radius: 10px;
+
+ }
+ .boutons a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    top: -1em;
+    left: 0.8em;
+ }
