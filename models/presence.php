@@ -1,75 +1,66 @@
 <?php 
-$presence=[
-    'Matricule'=>"P6_DEVWEB_2323_123",
-    'nom'=>"ndiaye",
-    'prenom'=>"Rama",
-    'telephone'=>"772341232",
-    'referentiel'=>"devWeb",
-    'heure_arrive'=>"06:21",
-    'status'=>"Present",
-
-
-    'Matricule1'=>"P6_DEVDATA_2321_123",
-    'nom1'=>"diop",
-    'prenom1'=>"khady",
-    'telephone1'=>"772341232",
-    'referentiel1'=>"devdata",
-    'heure_arrive1'=>"06:11",
-    'status1'=>"Present",
-
-    'Matricule2'=>"P6_refdig_2323_123",
-    'nom2'=>"seck",
-    'prenom2'=>"katy",
-    'telephone2'=>"772341232",
-    'referentiel2'=>"refdig",
-    'heure_arrive2'=>"06:23",
-    'status2'=>"Absent",
+/* function listePresences(){ */
 
 
 
-    'Matricule3'=>"P6_DEVWEB_2323_123",
-    'nom3'=>"diop",
-    'prenom3'=>"kouna",
-    'telephone3'=>"772341232",
-    'referentiel3'=>"devWeb",
-    'heure_arrive3'=>"06:13",
-    'status3'=>"Absent",
+function listePresences($idPromo){
+
+    $chemin = "../data/presence.csv";
+    $fichier = fopen($chemin, "r");
+
+    $presences = []; // Initialisation du tableau pour stocker les données de présence
+
+    if ($fichier) {
+        while (($ligne = fgetcsv($fichier)) !== false) {
+            if ($ligne[8]==$idPromo) {
+            // Ajouter chaque ligne lue du fichier CSV dans le tableau $presences
+            $presences[] = ['Matricule'=>$ligne[0],'nom'=>$ligne[1],'prenom'=>$ligne[2],'telephone'=>$ligne[3],'referentiel'=>$ligne[4],
+            "heure_d'arriver"=>$ligne[5],'status'=>$ligne[6],'date'=>$ligne[7],$ligne[8]=>'id','email'=>$ligne[9],'genre'=>$ligne[10],'active'=>$ligne[11]];
+        }
+    }
+        fclose($fichier); // Fermer le fichier
+    } else {
+        echo "Impossible d'ouvrir le fichier.";
+
+    }
+    //afficher les etudiants par promotions
 
 
-    'Matricule4'=>"P6_DEVWEB_2323_123",
-    'nom4'=>"sow",
-    'prenom4'=>"assane",
-    'telephone4'=>"772341232",
-    'referentiel4'=>"devWeb",
-    'heure_arrive4'=>"06:21",
-    'status4'=>"Present",
+    return $presences;
 
+}
 
-    'Matricule5'=>"P6_DEVWEB_2323_123",
-    'nom5'=>"ndiaye",
-    'prenom5'=>"Rama",
-    'telephone5'=>"772341232",
-    'referentiel5'=>"devWeb",
-    'heure_arrive5'=>"06:21",
-    'status5'=>"Present",
+function pagination($data, $page, $perPage){
+    $total = count($data);
+    $pages = ceil($total / $perPage);
+    $offset = ($page - 1)  * $perPage;
+    return array_slice($data, $offset, $perPage);
+}
+ 
+function referent($idPromo){
+    $chemin = "../data/ref.csv";
+    $fichier = fopen($chemin, "r");
 
+    $refe= []; // Initialisation du tableau pour stocker les données de présence
+    if ($fichier) {
+        while (($ligne = fgetcsv($fichier)) !== false) {
+            // Ajouter chaque ligne lue du fichier CSV dans le tableau $presences
+            if ($ligne[2]==$idPromo) {
+            $refe[] = ['refe'=>$ligne[0],'action'=>$ligne[1],'id'=>$ligne[2]];
+        }}
+        fclose($fichier); // Fermer le fichier
+    } else {
+        echo "Impossible d'ouvrir le fichier.";
 
-    'Matricule6'=>"P6_DEVWEB_2323_123",
-    'nom6'=>"ndiaye",
-    'prenom6'=>"Rama",
-    'telephone6'=>"772341232",
-    'referentiel5'=>"devWeb",
-    'heure_arrive6'=>"06:21",
-    'status6'=>"Present",
+    }
 
+    return $refe;
 
-    'Matricule7'=>"P6_DEVWEB_2323_123",
-    'nom7'=>"ndiaye",
-    'prenom7'=>"Rama",
-    'telephone7'=>"772341232",
-    'referentiel6'=>"devWeb",
-    'heure_arrive7'=>"06:21",
-    'status7'=>"Present",
-]
-
+ }   
+  
+   
+  
+  
 ?>
+
+

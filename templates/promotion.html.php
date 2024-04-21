@@ -1,4 +1,23 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/apprenant.css">
+    <link href="/chemin-vers-fontawesome/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+    
+</head>
+<body>
     <main style="margin-left:6em ; " >
         <h2 style="display: flex; justify-content: space-between;" class="title">
             <p class="promot">Referentiel</p>
@@ -19,17 +38,15 @@
             <h3 style="display: flex;"><input type="checkbox" class="chek">
             <label for="" style="position: relative; top: -10px;">Dev web/mobile</label></h3>
             <h3 style="display: flex;"><input type="checkbox" class="chek">
-                <label for="" style="position: relative; top: -10px;">Dev web/mobile</label></h3>
+                <label for="" style="position: relative; top: -10px;">Rev/dig</label></h3>
             <h3 style="display: flex;"><input type="checkbox" class="chek">
-                <label for="" style="position: relative; top: -10px;">Dev web/mobile</label></h3>
-            <h3 style="display: flex;"><input type="checkbox" class="chek">
-                <label for="" style="position: relative; top: -10px;">Dev web/mobile</label></h3>
-            <h3 style="display: flex;"><input type="checkbox" class="chek">
-                <label for="" style="position: relative; top: -10px;">Dev web/mobile</label></h3>
+                <label for="" style="position: relative; top: -10px;">DEv/data</label></h3>
+            
+           
             <h3>
                 <div class="btnn">
                     <a href="">Back</a>
-                    <a href="index.php?page=3">Créer</a>
+                    <a href="index.php?page=pro">Créer</a>
                 </div>   
 
             </h3>             
@@ -47,3 +64,4 @@
 
     </main>
 
+</body>

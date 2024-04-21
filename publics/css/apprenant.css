@@ -162,6 +162,16 @@ td,th{
        
        
     }
+   .fond2{
+    background-color:grey;
+    width: 25em;
+    height: 100em;
+    position: absolute;
+    z-index:-1 ;
+    opacity: 0.3;
+    left: -25em;
+    padding-top: 20em;
+   }
 
 
    

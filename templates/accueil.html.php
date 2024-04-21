@@ -1,6 +1,18 @@
 
-       
-    <main >
+     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="../publics/css/style.css">
+</head>
+<input type="checkbox" name="" id="check">
+   
+    <main>   
         <h2 style="display: flex; justify-content: space-between;" class="title">
             <p class="promot">Promotion</p>
             
@@ -19,7 +31,7 @@
     <input type="text"></div>
     <div class="btn" > 
         <a href=""><span>Ajouter Référentiel(s)</span></a>
-        <a href="index.php?page=2" class="btn" style="background-color: #16A085; "> <span>créer Promotion</span></a>
+        <a href="index.php?page=promo" class="btn" style="background-color: #16A085; "> <span>créer Promotion</span></a>
     </div>
    
   </form> 
@@ -35,7 +47,15 @@
     </div>
 
 
+
     </main>
+    </div>
+
+    
+    
+    
+    </body>
+    </html>
 
     
 
