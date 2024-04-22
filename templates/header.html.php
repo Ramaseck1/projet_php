@@ -56,7 +56,16 @@
         </ol>
         </div>
 
-        <div class="footer" style="margin-left:-1em">
+      
+        <?php
+    // Vérifie si la page actuelle n'est pas ref.html.php
+    $current_page = basename(__FILE__);
+    $is_ref_page = ($current_page === 'ref.html.php');
+
+    // Si ce n'est pas la page ref, affiche le contenu
+    if (!$is_ref_page) {
+?>
+     <div class="footer" style="margin-left:-1em">
         <p>copyright|sonatel academy</p>
         <p>
         <i class="material-icons" 
@@ -66,8 +75,9 @@
         </p>
 
         </div>
+
+<?php } ?>
         </div>   
-      <div class="main"></div>
      
   
         

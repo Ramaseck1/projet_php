@@ -26,7 +26,7 @@
     $chemin = "../data/ref.csv";
 
     // Ouvrir le fichier en mode append (ajout)
-    if (($fichier = fopen($chemin, "w")) !== false) {
+    if (($fichier = fopen($chemin, "a")) !== false) {
         // Écrire les données du nouveau référentiel dans le fichier CSV
         fputcsv($fichier, [$libelle, $action, $idPromo]);
         fclose($fichier);
@@ -36,6 +36,8 @@
     }
 }
     
+
+
 
 
 ?>

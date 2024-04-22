@@ -83,7 +83,7 @@
                     <td><?php echo $promo['df'] ?></td>
                     <td>  
                     <form action="" method="POST">
-                            <h3 style="display: flex;">o
+                            <h3 style="display: flex;">
                                 <input type="checkbox" class="chek" style="visibility: visible;display: block;-webkit-appearance:button;margin-left:-30em;height:1em;margin-top:-3em"  
                                     onchange="this.form.submit()" value="<?= $promo['idPromo']?>" name="promotions[]" 
                                     <?=$promo['action']=='1' ? 'checked': 'unchecked'?>>

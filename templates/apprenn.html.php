@@ -117,6 +117,7 @@
                 <option value=<?php echo $select['refe'] ?> <?php if(isset($_POST['referentiel']) && $_POST['referentiel'] == $select['refe']) echo 'selected'; ?>><?= $select['refe']?></option>
                 </button>
                 <?php endforeach?>
+
             </select>
             
         </div>

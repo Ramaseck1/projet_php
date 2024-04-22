@@ -15,8 +15,8 @@
         $val = $_SESSION['idPromo'];
         $refs = referent($val); 
 
-/*   $refs = isset($_SESSION['referentiels']) ? $_SESSION['referentiels'] : array(); 
- */   
+   $refs = isset($_SESSION['referentiels']) ? $_SESSION['referentiels'] : array(); 
+  
         // Traitement du formulaire pour ajouter un nouveau référentiel
     $libelle = $description = '';
     $libelle_error = $description_error = '';
