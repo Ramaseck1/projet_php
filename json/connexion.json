@@ -1,0 +1,157 @@
+{
+    "utilisateurs": [  
+
+      {
+        "type": "admin",
+        "email": "admin@example.com",
+        "mot_de_passe": "adminpass",
+        "nom": "kouna seck",
+        "genre":"F",
+        "role": "Administrateur"
+      },
+      {
+        "type": "admin",
+        "email": "admin@example.com",
+        "mot_de_passe": "adminpass",
+        "genre":"F",
+        "nom": "Khady",
+        "role": "Administrateur"
+      },
+      {
+        "type": "admin",
+        "email": "admin@example.com",
+        "mot_de_passe": "adminpass",
+        "nom": "Assane",
+        "genre":"G",
+        "role": "Administrateur"
+      },
+      {
+        "type": "admin",
+        "email": "admin@example.com",
+        "mot_de_passe": "adminpass",
+        "nom": "katy",
+        "genre":"F",
+        "role": "Administrateur"
+      },
+      {
+        "type": "apprenant",
+        "email": "apprenant1@example.com",
+        "mot_de_passe": "apprenantpass",
+        "nom": "Fatou",
+        "role": "Apprenant",
+        "matricule":"P2_DEVWEB_2323_123",
+        "referentiel":"devdata",
+        "heure_a":"06:21",     
+        "status":"Absent",
+        "telephone":"771231412",
+        "id":"1"
+
+
+      },
+      {
+        "type": "apprenant",
+        "email": "apprenant2@example.com",
+        "mot_de_passe": "apprenantpass",
+        "nom": "Rama seck",
+        "role": "Apprenant",
+        "matricule":"P2_DEVWEB_2323_123",
+        "referentiel":"refdig",
+        "heure_a":"06:21",     
+        "status":"Absent",
+        "telephone":"771231412",
+        "id":"1"
+       
+
+      },
+      {
+        "type": "apprenant",
+        "email": "apprenant3@example.com",
+        "mot_de_passe": "apprenantpass",
+        "nom": "Fatou",
+        "role": "Apprenant",
+        "matricule":"P2_DEVWEB_2323_123",
+        "referentiel":"devdata",
+        "heure_a":"06:21",     
+        "status":"Absent",
+        "telephone":"771231412",
+        "id":"6"
+
+
+      },
+      {
+        "type": "apprenant",
+        "email": "apprenant4@example.com",
+        "mot_de_passe": "apprenantpass",
+        "nom": "Rama seck",
+        "role": "Apprenant",
+        "matricule":"P2_DEVWEB_2323_123",
+        "referentiel":"refdig",
+        "heure_a":"06:21",     
+        "status":"Absent",
+        "telephone":"771231412",
+        "id":"2"
+       
+
+      },
+      {
+        "type": "apprenant",
+        "email": "apprenant5@example.com",
+        "mot_de_passe": "apprenantpass",
+        "nom": "Fatou",
+        "role": "Apprenant",
+        "matricule":"P2_DEVWEB_2323_123",
+        "referentiel":"devdata",
+        "heure_a":"06:21",     
+        "status":"Absent",
+        "telephone":"771231412",
+        "id":"2"
+
+
+      },
+      {
+        "type": "apprenant",
+        "email": "apprenant6@example.com",
+        "mot_de_passe": "apprenantpass",
+        "nom": "Rama seck",
+        "role": "Apprenant",
+        "matricule":"P2_DEVWEB_2323_123",
+        "referentiel":"refdig",
+        "heure_a":"06:21",     
+        "status":"Absent",
+        "telephone":"771231412",
+        "id":"3"
+       
+
+      },
+      {
+        "type": "apprenant",
+        "email": "apprenant7@example.com",
+        "mot_de_passe": "apprenantpass",
+        "nom": "Fatou",
+        "role": "Apprenant",
+        "matricule":"P2_DEVWEB_2323_123",
+        "referentiel":"devdata",
+        "heure_a":"06:21",     
+        "status":"Absent",
+        "telephone":"771231412",
+        "id":"4"
+
+
+      },
+      {
+        "type": "apprenant",
+        "email": "apprenant8@example.com",
+        "mot_de_passe": "apprenantpass",
+        "nom": "Rama seck",
+        "role": "Apprenant",
+        "matricule":"P2_DEVWEB_2323_123",
+        "referentiel":"refdig",
+        "heure_a":"06:21",     
+        "status":"Absent",
+        "telephone":"771231412",
+        "id":"5"
+       
+
+      }
+    ]
+  }

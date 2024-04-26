@@ -31,6 +31,14 @@
                 require_once"../templates/ref.html.php";
     
                     break;
+                    case 'dec':
+                        require_once"../templates/deconnexion.php";
+            
+                            break;
+                            case 'admin':
+                                require_once"../templates/admin.html.php";
+                    
+                                    break;
                  case 'pro':
                     $_SESSION['']='promo';
                 require_once"../templates/promo.html.php";

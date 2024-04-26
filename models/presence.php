@@ -1,8 +1,7 @@
 <?php 
+
+//lecture fichier csv
 /* function listePresences(){ */
-
-
-
 function listePresences($idPromo){
 
     $chemin = "../data/presence.csv";
@@ -29,6 +28,58 @@ function listePresences($idPromo){
     return $presences;
 
 }
+
+
+//lecture fichier json
+function listePresencesjs($idPromo) {
+    // Chemin du fichier JSON
+    $chemin_fichier_json = '../json/connexion.json';
+
+    // Lecture du fichier JSON
+    $contenu_json = file_get_contents($chemin_fichier_json);
+
+    // Décodage du JSON en un tableau associatif
+    $donnees = json_decode($contenu_json, true);
+
+    // Vérification des erreurs de décodage
+    if ($donnees === null) {
+        // Il y a eu une erreur lors du décodage JSON
+        return array(); // Ou vous pouvez gérer l'erreur d'une autre manière
+    }
+
+    $utilisateurs = $donnees['utilisateurs'];
+    $utilisateurs_filtrés = array();
+
+    // Filtrer les utilisateurs en fonction de l'ID de la promotion
+    foreach ($utilisateurs as $utilisateur) {
+        if (isset($utilisateur['id']) && $utilisateur['id'] == $idPromo) {
+            $utilisateurs_filtrés[] = $utilisateur;
+        }
+    }
+
+    return $utilisateurs_filtrés; // Retourne le tableau filtré d'utilisateurs
+}
+
+// Exemple d'utilisation :
+$idPromo = 1; // Remplacez ceci par l'ID de promotion souhaité
+
+$utilisateurs_filtrés = listePresencesjs($idPromo);
+
+// Afficher les utilisateurs chargés
+foreach ($utilisateurs_filtrés as $utilisateur) {
+    // Traiter chaque utilisateur ici
+}
+
+
+
+
+
+
+
+
+
+
+
 
 function pagination($data, $page, $perPage){
     $total = count($data);

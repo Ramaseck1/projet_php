@@ -18,15 +18,21 @@
     
 </head>
 <body>
-<?php  include "../models/presence.php";
+
+
+<?php 
+ 
+
+include "../models/presence.php";
 
 
 $val=$_SESSION['idPromo'];
 
 // filtre presence
-$presences=listePresences($val);
-$apprenant=referent($val);
-
+/* $presences=listepresences($val);
+ */$presencesj=listepresencesjs($val);
+/* $apprenant=referent($val);
+ */
 
 
 
@@ -42,11 +48,11 @@ $recups_date= isset($_POST['Date']) ? $_POST['Date'] : date('d-m-Y');
          }
 
         if(!empty($app)){
-            $listefiltre=array_filter($presences,function($appre) use ($app){
+            $listefiltre=array_filter($presencesj,function($appre) use ($app){
                 return $appre['status']==$app;
             });
             // redefinir le tableau filtre
-            $presences=array_values($listefiltre);
+            $presencesj=array_values($listefiltre);
 
 
 
@@ -59,24 +65,24 @@ $recups_date= isset($_POST['Date']) ? $_POST['Date'] : date('d-m-Y');
          }
 
         if(!empty($app)){
-            $listefiltre=array_filter($presences,function($appre) use ($app){
+            $listefiltre=array_filter($presencesj,function($appre) use ($app){
                 return $appre['referentiel']==$app;
             });
             // redefinir le tableau filtre
-            $presences=array_values($listefiltre);
+            $presencesj=array_values($listefiltre);
         } 
         //liste par defaut de la liste des presence 
 
 
         // Vérification si les filtres status et referentiel sont vides
-        $statusFiltreVide = empty($_POST['status']) || $_POST['status'] == 'status';
+       $statusFiltreVide = empty($_POST['status']) || $_POST['status'] == 'status';
         $referentielFiltreVide = empty($_POST['referentiel']) || $_POST['referentiel'] == 'referentiel';
 
         // Charger la liste complète des présences si les filtres sont vides
         if ($statusFiltreVide && $referentielFiltreVide) {
-            $presences = listePresences($val);
+            $presencesj = listepresencesjs($val);
         }
-                
+    
 
         //filtre genenrel
       
@@ -88,11 +94,11 @@ $recups_date= isset($_POST['Date']) ? $_POST['Date'] : date('d-m-Y');
          
        }
        if(!empty($search)){
-          $listefiltres=array_filter($presences,function($present) use ($search){
+          $listefiltres=array_filter($presencesj,function($present) use ($search){
               return $present['nom']==$search;
           });
           // redefinir le tableau filtre
-          $presences=array_values($listefiltres);
+          $presencesj=array_values($listefiltres);
           
          
       } 
@@ -107,11 +113,11 @@ $recups_date= isset($_POST['Date']) ? $_POST['Date'] : date('d-m-Y');
            
          }
          if(!empty($dates)){
-            $Datefiltre=array_filter($presences,function($present) use ($dates){
+            $Datefiltre=array_filter($presencesj,function($present) use ($dates){
                 return $present['date']==$dates;
             });
             // redefinir le tableau filtre
-            $presences=array_values($Datefiltre);
+            $presencesj=array_values($Datefiltre);
           
 
            
@@ -122,11 +128,11 @@ $recups_date= isset($_POST['Date']) ? $_POST['Date'] : date('d-m-Y');
         }
         // Si la date sélectionnée est égale à la date actuelle, filtre les présences pour obtenir celles d'aujourd'hui
         if(!empty($dates) && $dates == date('Y-m-d')){
-            $presencesAujourdhui = array_filter($presences,function($present) use ($dates){
+            $presencesjAujourdhui = array_filter($presencesj,function($present) use ($dates){
                 return $present['date']==$dates;
             });
             // Redéfinir le tableau de présences avec celles d'aujourd'hui
-            $presences = array_values($presencesAujourdhui);
+            $presencesj = array_values($presencesjAujourdhui);
         }
         //pagination
         //element par page
@@ -134,12 +140,12 @@ $recups_date= isset($_POST['Date']) ? $_POST['Date'] : date('d-m-Y');
         $pages = isset($_GET['pages']) ? $_GET['pages'] : 1;
       
 
-        $presencesPaginees = pagination($presences, $pages, $elementsParPage);
+        $presencesjPaginees = pagination($presencesj, $pages, $elementsParPage);
    
 
         // Pagination des présences filtrées
-/*                             $presencesPaginees = array_slice($presencesFiltrees, $decal, $elementsParPage);
-*/                        
+/*                             $presencesjPaginees = array_slice($presencesjFiltrees, $decal, $elementsParPage);
+*/   
 ?>
     
     <main>
@@ -186,7 +192,6 @@ $recups_date= isset($_POST['Date']) ? $_POST['Date'] : date('d-m-Y');
                         <tr>
                             <th>Matricule</th>
                             <th>Nom</th>
-                            <th>Prenom</th>
                             <th>Telephone</th>
                             <th>Referentiel</th>
                             <th>heure d'arrivé</th>
@@ -195,37 +200,47 @@ $recups_date= isset($_POST['Date']) ? $_POST['Date'] : date('d-m-Y');
                            
                         </tr>
                         <?php
-                        foreach($presencesPaginees as $presence):
+                        foreach($presencesjPaginees as $presence):
+                                // Afficher uniquement les informations pertinentes pour l'apprenant
+
+                                
+                        ?>
                         
                         ?>
+                        
                         <tr>
-                            <td><?php echo $presence['Matricule']?></td>
+                            <td><?php echo $presence['matricule']?></td>
                             <td><?php echo $presence['nom']?></td>
-                            <td><?php echo $presence['prenom']?></td>
                             <td><?php echo $presence['telephone']?></td>
                             <td> <?php echo $presence['referentiel']?></td>
-                            <td><span style="color: green;"><?php echo $presence["heure_d'arriver"]?></span></td>
+                            <td><span style="color: green;"><?php echo $presence["heure_a"]?></span></td>
                             <td><span style="background: rgb(231, 230, 230); color: green;padding: 10px;"><?php 
                                echo $presence['status']
                             ?></span></td>
                             <td><?php echo $recups_date?></td>
                             
                         </tr>
-                        <?php
-                        endforeach
+                           <?php
+                        
+                    endforeach
+                    ?>
                       
-                        ?>
+                   
 
-                    
-             
+                 
+
+       
+    
+     
+     
                     </table>
                     <?php if ($pages = 1) : ?>
                         <a href="?page=pre&pages=<?php echo ($pages - 1) ?>" style="margin-left:45em;font-size:20px;text-decoration: none;" ><</a>
                 <?php endif ?>
-                <?php for ($i = 1; $i <= ceil(count($presences,) / $elementsParPage); $i++) : ?>
+                <?php for ($i = 1; $i <= ceil(count($presencesj,) / $elementsParPage); $i++) : ?>
                     <a style="font-weight:bold; font-size:20px;text-decoration: none;color:grey " href="?page=pre&pages=<?php echo $i ?>" <?php if ($i == $pages) echo 'style="font-weight:bold; font-size:10px;"' ?> ><?php echo $i ?></a>
                 <?php endfor ?>
-                <?php if ($pages < ceil(count($presences,)  / $elementsParPage)) : ?>
+                <?php if ($pages < ceil(count($presencesj,)  / $elementsParPage)) : ?>
                     <a href="?page=pre&pages=<?php echo ($pages + 1) ?>" style="font-size:20px ; text-decoration: none;">></a>
                 <?php endif ?>
 

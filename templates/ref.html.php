@@ -11,6 +11,7 @@
     
     <input type="checkbox" name="" id="check">
     <?php 
+     
         include '../models/referent.php';            
         $val = $_SESSION['idPromo'];
         $refs = referent($val); 
@@ -109,8 +110,6 @@
            
         </div>
         </div>
-
-
         
       
     </main>

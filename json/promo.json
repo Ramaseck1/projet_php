@@ -1,0 +1,58 @@
+{
+    "utilisateurs": [
+        {
+            "type": "apprenant",
+            "role": "Apprenant",
+            "idPromo": "1",
+            "libelle": "promotion1",
+            "dd": "2\/03\/2024",
+            "df": "2\/11\/2024",
+            "action": "0"
+        },
+        {
+            "type": "apprenant",
+            "role": "Apprenant",
+            "idPromo": "2",
+            "libelle": "promotion2",
+            "dd": "2\/03\/2024",
+            "df": "2\/11\/2024",
+            "action": "1"
+        },
+        {
+            "type": "apprenant",
+            "role": "Apprenant",
+            "idPromo": "3",
+            "libelle": "promotion3",
+            "dd": "2\/03\/2024",
+            "df": "2\/11\/2024",
+            "action": "0"
+        },
+        {
+            "type": "apprenant",
+            "role": "Apprenant",
+            "idPromo": "4",
+            "libelle": "promotion4",
+            "dd": "2\/03\/2024",
+            "df": "2\/11\/2024",
+            "action": "0"
+        },
+        {
+            "type": "apprenant",
+            "role": "Apprenant",
+            "idPromo": "5",
+            "libelle": "promotion5",
+            "dd": "2\/03\/2024",
+            "df": "2\/11\/2024",
+            "action": "0"
+        },
+        {
+            "type": "apprenant",
+            "role": "Apprenant",
+            "idPromo": "-",
+            "libelle": "promotion6",
+            "dd": "2\/03\/2024",
+            "df": "2\/11\/2024",
+            "action": "0"
+        }
+    ]
+}

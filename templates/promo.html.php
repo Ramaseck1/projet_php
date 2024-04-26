@@ -32,9 +32,17 @@
     <input type="hidden" name="page" value="pre">
            <div class="tablee" style="margin-left: ;width:104em">
             <table style="height: 1px;">
-            <?php    include "../models/promo.php";
+            <?php   
+                   
+
+              
+             include "../models/promo.php";
 
                     $promos=listePromo();
+                    $promosj=listePromojs();
+                
+                        
+
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         // Vérifier si une action a été définie
                         if (isset($_POST['action'])) {
@@ -67,14 +75,17 @@
                     <th> Date Fin</th>
                     <th>Actions</th>
                 </tr>
-                <?php foreach($promos as $promo){
+                <?php foreach($promosj as $promo){
                     if($promo['action']=='1'){
                         $_SESSION['idPromo']=$promo['idPromo'];
                     }else{
                         $_SESSION['action']='0';
                     }
+                        
 
                     ?>
+                                <?php            if($promo["type"] =='apprenant'): ?>
+
                 <tr > 
                  <td></td>
                     <td style="color: #16A085; fo;nt-weight: bold;">  <?php echo $promo['libelle'] ?>
@@ -92,6 +103,8 @@
                             </h3>
                         </form>
                     </td>
+                    <?php         endif?>
+
                 <?php } ?>
 
             </table>:

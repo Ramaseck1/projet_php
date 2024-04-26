@@ -1,4 +1,4 @@
-     <!DOCTYPE html>
+<!DOCTYPE html>
      <html lang="en">
      <head>
          <meta charset="UTF-8">
@@ -20,140 +20,39 @@
 
           
 
-                             include "../models/presence.php";
+                             include "../models/connexion.php";
+
+                             $utilisateurs=connexion();
                           
-                             $val=$_SESSION['idPromo'];
-                             $apprenant=listePresences($val);
-                             $referent=referent($val);
-                              // filtre appreann header
-                              if(isset($_POST['searchG'])){
-                                $search=$_POST['searchG']; 
-                               
-                             }
-                             if(!empty($search)){
-                                $listefiltres=array_filter($apprenant,function($appres) use ($search){
-                                    return $appres['prenom']==$search;
-                                });
-                                // redefinir le tableau filtre
-                                $apprenant=array_values($listefiltres);
-                              
-                               
-                            }
+
+
+                         
                            
-                            $totalElementsFiltres =ceil(count($apprenant)) ;
-
-
-                             // filtre appreann main
-                                // verification si searc existe
-                             if(isset($_POST['search'])){
-                                $app=$_POST['search'];
-                               
-                               
-                             }
-
-                            if(!empty($app)){
-                                $listefiltre=array_filter($apprenant,function($appre) use ($app){
-                                    return $appre['nom']==$app;
-                                });
-                                // redefinir le tableau filtre
-                                $apprenant=array_values($listefiltre);
-
-
-
-                            }
-                            
-                           
-        //filtre refrentiele
-        if(isset($_POST['referentiel'])){
-            $app=$_POST['referentiel'];
-           
-         }
-
-        if(!empty($app)){
-            $listefiltre=array_filter($apprenant,function($appre) use ($app){
-                return $appre['referentiel']==$app;
-            });
-            // redefinir le tableau filtre
-            $apprenant=array_values($listefiltre);
-        } 
-
         
-                           
-         // Vérification si les filtres status et referentiel sont vides
-         $referentielFiltreVide = empty($_POST['referentiel']) || $_POST['referentiel'] == 'referentiel';
- 
-         // Charger la liste complète des présences si les filtres sont vides
-         if ($referentielFiltreVide) {
-             $apprenant = listePresences($val);
-         }
-                                
-                                $elementsParPage = 3;
-                                $pages = isset($_GET['pages']) ? $_GET['pages'] : 1;
-                                $decal = ($pages - 1) * $elementsParPage;
-    
-
-                                // Pagination des présences filtrées
-                                $presencesPaginees = array_slice($apprenant, $decal, $elementsParPage);
                   ?>
          <main>
                     <h2 style="display: flex; justify-content: space-between;" class="title titleapp">
-                        <p class="promot">Apprennants</p>
+                        <p class="promot">Administrateur</p>
                         <p class="promos"> Promos  </p>
                         <p class="promos"> <span>></span>listes</p>
                         <p class="promos"> >detail>apprennants</p>  
                     </h2>
              <br>              
              <div class="promo2">
-                 <p>Promotion:<span> promotion (<?php  echo $val?>)</span></p>
 <!--                  <p class="pro">Referentiel: <span>Dev Web/mobile</span></p>
- -->    
-                      
-            <p class="pro"><span style="margin-left:600px;">Referentiel: </span> <span>
-            <form action="" method="POST">
-    <input type="hidden" name="page" value="pre">
-    <div class="entete" style="display:flex;">
-
-
-        <div class="select2" style="margin-top:1em">
-        
-        <div onclick="toggleDropdown()" style="border:1px solid grey;border-radius:4px;background-color: rgb(221, 218, 218);opacity:0.8;color:green;font-weight:bold">Sélectionner un référentiel</div>
-        <div class="referenciel-dropdown" id="referencielDropdown" >
-        <label for="" style="display:flex;gap:14px" >refetentiel<input type="checkbox" value="referentiel" name="referentiel" style="visibility:visible;display: block; -webkit-appearance:button;" onclick="this.form.submit()"></label>
-        <?php foreach($referent as $select){
-             
-
-            ?>
-            <div style="background-color:green;margin-top:-1px;width:12em;height:1em">
-
-           
-            <label for="" style="display:flex;gap:14px"><?php echo $select['refe'] ?>
-            <input type="checkbox" value="<?php echo $select['refe'] ?>" name="referentiel" style="visibility:visible;display: block; -webkit-appearance:button;" onclick="this.form.submit()"></label>
-            </div>
-                        <?php } ?>
-
-
-        </div>
-
-
-              
-        </div>
-       
-   
-    </div>
-</form> 
-
+ -->   
 
              </div>
              <div class="contenu" style="height: 38em; width:90em">
-                 <h3>Apprennants</h3>
+                 <h3>admin</h3>
 <!--                  <input type="checkbox" style="visibility:visible;display: block; -webkit-appearance:button;">
  -->
                  <div class="champ">
-                     <label for="libellé">Listes des apprenants</label>
+                     <label for="libellé">Listes des admins</label>
                      <div class="contai" style="display: flex; margin-left: -3em; ">
                          <div class="containerr">
                              <input type="checkbox" id="click">
-                             <label for="click" class="click-me" style="background-color: #16A085;"><p>Nouveau</p> </label>
+                             <label for="click" class="click-me" style="background-color: #16A085;margin-left:35em"><p>Nouveau</p> </label>
                             
                              <div class="center">
                              <div class="fond"></div>
@@ -183,7 +82,7 @@
      
      
                                  <div class="headerr" style="display: flex; justify-content: space-between;">
-                                     <h2>Nouvel Apprennant</h2>
+                                     <h2>Nouvel admin</h2>
                                  <label for="click" class="fas fa-times" style="position: relative; left: -9em; top:-0.4em" ></label>
                                  </div>
                                  <div class="part2" style="display: flex;justify-content: space-around;">
@@ -245,35 +144,10 @@
                      
                              </div>
                          </div>
+                       
+                        
                          <div class="containerr">
                              <input type="checkbox" id="click">
-                             <label for="click" class="click-me" style="background-color: orange;"> <p>insertion en masse</p></label>
-                             <div class="center">
-                                 <div class="headerr">
-                                     <h2>pop-up</h2>
-                                 <label for="click" class="fas fa-times"></label>
-                                 </div>
-                                 <label for="click" class="fas fa-check"></label>
-                                 <label for="click" class="close-btn">close</label>
-                     
-                             </div>
-                         </div>
-                         <div class="containerr">
-                             <input type="checkbox" id="clicks">
-                             <label for="clicks" class="click-mee" style="background-color: #3498DB;"><p>Fichier model</p></label>
-                             <div class="center1">
-                                 <div class="headerr">
-                                     <h3>Choisir un fichier Excel</h3>
-                                 </div>
-                                 <div class="border"><input type="file" style="border: none;"></div>
-                                 <label for="clicks" class="fermer" >fermer</label>
-                                 <label for="clicks" class="close-btn">Enregistrer</label>
-                     
-                             </div>
-                         </div>
-                         <div class="containerr">
-                             <input type="checkbox" id="click">
-                             <label for="click" class="click-me" style="background-color: #1238D5;"><p>Listes des Exclus</p></label>
                              <div class="center">
                                  <div class="headerr">
                                      <h2>pop-up</h2>
@@ -301,69 +175,45 @@
                          <tr>
                                  <th>img</th>
                                  <th>Nom</th>
-                                 <th>Prenom</th>
                                  <th>Email</th>
                                  <th>Genre</th>
-                                 <th>Telephone</th>
-                                 <th>Action</th>
-                                 <th>ref</th>
+                                 <th>type</th>
+                               
                                
                              </tr>
                          
                              
-                        <?php
-                         foreach($presencesPaginees as $liste):
-                             ?>
+                       
                          <tr>
      
-                        
+                            <?php foreach($utilisateurs as $user): ?>
+                             <?php if($user['type'] === 'admin'): ?>
+
                        
                             <td><img src="../publics/img/logo.png" width="25px" alt="" style="border-radius:100em;background-color:black; height:25px"></td>
-                             <td><?php echo $liste['nom']; ?></td>
-                             <td><?php echo $liste['prenom']; ?></td>
-                             <td><?php echo $liste['email']; ?></td>
-                             <td><?php echo $liste['genre']; ?></td>
-                             <td><?php echo $liste['telephone']; ?></td>
-                             <td><?php echo $liste['referentiel']; ?></td>
+                             <td><?= $user['nom']?></td>
+                             <td><?= $user['email']?></td>
+                             <td><?= $user['genre']?></td>
+                             <td><?= $user['type']?></td>
+                        
+                         
 
 
                            
                            
                              </tr>
-                             <?php
-                             endforeach
-                             ?>
+                             <?php endif ?>
+
+                             <?php endforeach ?>
+
+                           
                              
                          </table>
                         </div>
      
-                      <!-- pagiantion -->
- <div style="margin-left:70em">
-     <?php if ($pages = 1) : ?>
-         <a href="?page=app&pages=<?php echo ($pages + 1) ?>" ><</a>
-     <?php endif ?>
-     <?php for ($i = 1; $i <= ceil($totalElementsFiltres / $elementsParPage); $i++) : ?>
-         <a href="?page=app&pages=<?php echo $i ?>" <?php if ($i == $pages) echo 'style="font-weight:bold;"' ?> ><?php echo $i ?></a>
-     <?php endfor ?>
-     <?php if ($pages < ceil($totalElementsFiltres / $elementsParPage)) : ?>
-         <a href="?page=app&pages=<?php echo ($pages + 1) ?>">></a>
-     <?php endif ?>
-     </div> 
+                   
      
-    </div>
-      <!--  <h3>Référentiel</h3> -->
-     
-      <script>
-        function toggleDropdown() {
-            var dropdown = document.getElementById("referencielDropdown");
-            if (dropdown.style.display === "none") {
-                dropdown.style.display = "block";
-                dropdown.style.height = "-100em";
-            } else {
-                dropdown.style.display = "none";
-            }
-        }
-    </script>
+    
      
      
              

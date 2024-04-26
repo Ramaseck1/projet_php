@@ -25,8 +25,7 @@ body{
     box-shadow: 12em 12em 12em 12em rgb(226, 226, 226);
 
 }
-.content p{
-    background-color: rgb(230, 193, 201);
+/* .content p{
     padding: 1em;
     color: #c70808;
     font-size: 1.3em;
@@ -35,7 +34,7 @@ body{
     left: 0.3em;
     top: 0.5em;
 }
-
+ */
 form{
     position: relative;
     top: 2em;
